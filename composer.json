@@ -1,0 +1,36 @@
+{
+    "name": "richmarisa/finder",
+    "description": "Finder is a Drupal 8 module to help users find services which meet their criteri",
+    "type": "https://it.cornell.edu/custom-web",
+    "homepage": "https://drupal.org/project/mobile_detect",
+    "authors": [
+        {
+            "name": "Rich Marisa (richmarisa)",
+            "email": "rjm2@cornell.edu",
+            "homepage": "https://wildgoosechase.net",
+            "role": "Author"
+        },
+        {
+            "name": "Nazrin Tingstrom",
+            "email": "nazrin.tingstrom@cornell.edu",
+            "role": "Co-maintainer"
+        },
+        {
+            "name": "Kevin McGuire",
+            "email": "kpm75@cornell.edu",
+            "role": "Designer"
+        },
+        {
+            "name": "Anthony Adinolfi",
+            "email": "ama39@cornell.edu",
+            "role": "Designer"
+        }
+    ],
+    "support": {
+    },
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "drupal/paragraphs": "^1.3"
+    }
+}
