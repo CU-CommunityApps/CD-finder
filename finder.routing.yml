@@ -1,0 +1,40 @@
+finder.content:
+  path: '/finder'
+  defaults:
+    _controller: '\Drupal\finder\Controller\FinderController::content'
+    _title: 'Finder'
+  requirements:
+    _permission: 'access content'
+finder.facettree:
+  path: '/rest/facettree'
+  defaults:
+    _controller: '\Drupal\finder\Controller\FinderController::facettree'
+  requirements:
+    _permission: 'access content'
+finder.servicelist:
+  path: '/rest/servicelist'
+  defaults:
+    _controller: '\Drupal\finder\Controller\FinderController::servicelist'
+  requirements:
+    _permission: 'access content'
+finder.sendemail:
+  path: '/rest/sendemail'
+  methods: [POST]
+  defaults:
+    _controller: '\Drupal\finder\Controller\FinderController::send_email'
+  requirements:
+    _permission: 'access content'
+finder.configuration:
+  path: '/rest/finder_settings'
+  defaults:
+    _controller: '\Drupal\finder\Controller\FinderController::configuration'
+  requirements:
+    _permission: 'access content'
+finder.settings:
+#  path: '/admin/structure/finder/settings'
+  path: '/admin/config/content/finder'
+  defaults:
+    _form: '\Drupal\finder\Form\finderSettingsForm'
+    _title: 'Finder Configuration'
+  requirements:
+    _permission: 'administer site configuration'

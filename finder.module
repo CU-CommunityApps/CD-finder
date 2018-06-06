@@ -1,0 +1,56 @@
+<?PHP
+
+
+
+function finder_theme($existing, $type, $theme, $path) {
+
+  return [
+    'finder' => [
+      'variables' => [],
+      'template' => 'finder',
+    ],
+  ];
+}
+
+// see https://www.drupal.org/docs/8/theming/twig/create-custom-twig-templates-from-custom-module
+// the template => was found on
+// https://www.drupal.org/node/2878499
+
+
+
+/**
+* Implements hook_mail().
+*/
+function finder_mail($key, &$message, $params) {
+ $options = array(
+   'langcode' => $message['langcode'],
+ );
+ switch ($key) {
+   case 'complete_form':
+     $message['from'] = \Drupal::config('system.site')->get('mail');
+     // removed from following array: '@title' => $params['node_title']
+     $message['subject'] = t('Finder email', array(), $options);
+     $message['body'][] = $params['message'];
+     break;
+ }
+}
+
+
+/**
+ * this gets the configuration page to show up
+ */
+function finder_menu() {
+  $items = array();
+
+  $items['admin/config/content/finder'] = array(
+    'title' => 'Finder',
+    'description' => 'Configuration for Finder module',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('finder_admin_settings'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+
+}

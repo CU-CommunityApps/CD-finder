@@ -1,0 +1,18 @@
+uuid: 7441436c-3b5c-402e-9f6b-c049b12698a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Service
+type: service
+description: 'Part of the Finder module'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

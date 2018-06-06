@@ -1,0 +1,9 @@
+uuid: 7d5f4dbb-ac5b-4676-b274-649cacc9a403
+langcode: en
+status: true
+dependencies: {  }
+id: service_paragraphs
+label: 'Service Paragraphs'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

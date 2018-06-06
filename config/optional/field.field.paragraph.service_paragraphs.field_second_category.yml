@@ -1,0 +1,21 @@
+uuid: bb725f86-2933-4eb4-b598-3205289d6950
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_second_category
+    - paragraphs.paragraphs_type.service_paragraphs
+  module:
+    - text
+id: paragraph.service_paragraphs.field_second_category
+field_name: field_second_category
+entity_type: paragraph
+bundle: service_paragraphs
+label: 'Second Category'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

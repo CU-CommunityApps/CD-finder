@@ -1,0 +1,40 @@
+uuid: e2042785-f628-42e0-a312-0e8b8e217e48
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_service_paragraphs
+    - node.type.service
+    - paragraphs.paragraphs_type.service_paragraphs
+  module:
+    - entity_reference_revisions
+id: node.service.field_service_paragraphs
+field_name: field_service_paragraphs
+entity_type: node
+bundle: service
+label: 'Service Paragraphs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      service_paragraphs: service_paragraphs
+    target_bundles_drag_drop:
+      insert_gallery:
+        weight: 4
+        enabled: false
+      insert_slideshow:
+        weight: 5
+        enabled: false
+      slideshow_slide:
+        weight: 6
+        enabled: false
+      service_paragraphs:
+        enabled: true
+        weight: 7
+field_type: entity_reference_revisions

@@ -1,0 +1,29 @@
+uuid: 07a3b558-d3e8-4e88-aa47-bd009ad3043b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_facet_matches
+    - node.type.service
+    - taxonomy.vocabulary.facets
+id: node.service.field_facet_matches
+field_name: field_facet_matches
+entity_type: node
+bundle: service
+label: 'Facet Matches'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      facets: facets
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

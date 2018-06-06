@@ -1,0 +1,9 @@
+uuid: d9abb2ad-83ed-41dd-84dd-96022e1e2083
+langcode: en
+status: true
+dependencies: {  }
+name: Facets
+vid: facets
+description: 'Part of the Finder module'
+hierarchy: 0
+weight: 0
