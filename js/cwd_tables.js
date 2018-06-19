@@ -143,8 +143,8 @@ jQuery(document).ready(function($) {
   }
 
   /* Data Storage Tool: Delay table init until the table is rendered by app.js */
-  //nst37 - Commented this code in order to make the table rows align when coming in from a URL with services as parameters.    
-  /*  
+  //nst37 - Commented this code in order to make the table rows align when coming in from a URL with services as parameters.
+  /*
   var tables_ran_once = false;
   $('#comparisonchart').on('DOMSubtreeModified', function(){
     if (!tables_ran_once) {
@@ -153,7 +153,7 @@ jQuery(document).ready(function($) {
     }
   });
   */
-    
+
   tables(true);
 
   $(document).on('change', '.cardcheckbox, .manualcheckbox, .facet', $.debounce( 50, function(){
@@ -276,8 +276,8 @@ jQuery(document).ready(function($) {
   }
 
   /* Data Storage Tool: Delay table init until the table is rendered by app.js */
-  //nst37 - Commented this code in order to make the table rows align when coming in from a URL with services as parameters.    
-  /*  
+  //nst37 - Commented this code in order to make the table rows align when coming in from a URL with services as parameters. */
+
   var tables_ran_once = false;
   $('#comparisonchart').on('DOMSubtreeModified', function(){
     if (!tables_ran_once) {
@@ -285,8 +285,7 @@ jQuery(document).ready(function($) {
       tables_ran_once = true;
     }
   });
-  */
-    
+
   tables(true);
 
   $(document).on('change', '.cardcheckbox, .manualcheckbox, .facet', $.debounce( 50, function(){

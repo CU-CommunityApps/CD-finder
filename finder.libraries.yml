@@ -2,20 +2,20 @@ finder:
   version: 1.x
   css:
     theme:
+      css/font-awesome.min.css: {}
+      css/bootstrap.min.css: {}
       css/finder.css: {}
-      css/customizations.css: {}
       css/cwd_utilities.css: {}
   js:
     js/mustache.js: {}
     js/jquery.mustache.js: {}
     js/contrib/jquery.ba-throttle-debounce.min.js: {}
     js/contrib/jquery.detect_swipe.js: {}
-    js/cwd_popups.js: {}
+    js/app.js: {}
     js/cwd_tables.js: {}
+    js/cwd_popups.js: {}
     js/cwd_gallery.js: {}
     js/cwd_utilities.js: {}
-    js/rdmsg-utils.js: {}
-    js/app.js: {}
   dependencies:
     - core/jquery
     - core/drupal

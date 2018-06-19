@@ -1,0 +1,27 @@
+@mixin button-tint($color) {
+    background-color: white;
+    border-radius: 2px;
+    border: 2px solid lighten($color, 10);
+    padding: 7px 30px;
+    color: $color;
+
+    &:hover, &:focus {
+        background-color: lighten($color, 50);
+        border-color: $color;
+        color: darken($color, 10);
+    }
+
+    &:active, &:active:hover, &:active:focus {
+        background-color: $color;
+        border-color: $color;
+        color: white;
+    }
+}
+
+.btn-primary {
+    @include button-tint($modularstorage-color-c);
+}
+
+.btn-secondary {
+    @include button-tint($modularstorage-color-a);
+}

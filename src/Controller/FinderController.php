@@ -165,7 +165,7 @@ class FinderController extends ControllerBase {
                 // the order of the paragraphs is in $paragraph_display[
                 // the fields are array_keys($paragraph_display["content"])
                 // the weights are $paragraph_display["content"][$field]["weight"]
-
+                //var_dump($paragraph_display); exit;
                 $pdcontent = $paragraph_display->toArray()["content"];
 
                 foreach ($pdcontent as $machine_name => $field_data) {

@@ -13,39 +13,6 @@
         return result;
     }
 
-    // throttle taken from underscores.js
-
-    function throttle(func, wait, options) {
-      var context, args, result;
-      var timeout = null;
-      var previous = 0;
-      if (!options) options = {};
-      var later = function() {
-        previous = options.leading === false ? 0 : Date.now();
-        timeout = null;
-        result = func.apply(context, args);
-        if (!timeout) context = args = null;
-      };
-      return function() {
-        var now = Date.now();
-        if (!previous && options.leading === false) previous = now;
-        var remaining = wait - (now - previous);
-        context = this;
-        args = arguments;
-        if (remaining <= 0 || remaining > wait) {
-          if (timeout) {
-            clearTimeout(timeout);
-            timeout = null;
-          }
-          previous = now;
-          result = func.apply(context, args);
-          if (!timeout) context = args = null;
-        } else if (!timeout && options.trailing !== false) {
-          timeout = setTimeout(later, remaining);
-        }
-        return result;
-      };
-    };
 
     var servicelist = [
  //           { name: "Shared File Services", matches: [1,2,4,5,6,7] }
@@ -63,11 +30,12 @@
         <li>\
         <div class='question-wrapper'>\
         <h4 id='question-{{id}}'>{{question}}</h4>\
-        <a class='control-indicator collapsed' data-toggle='collapse' aria-expanded='false' aria-controls='#explanation-{{id}}' href='#explanation-{{id}}''>\
-            <span class='sr-only'>Expand {{question}}</span>\
+        <a aria-haspopup='true' class='popup' data-hidden='true' href='#explanation-{{id}}''>\
+            <span class='fa fa-info-circle' aria-hidden='true'></span>\
+            <span class='sr-only'>More info about {{question}}</span>\
         </a>\
         </div>\
-        <div class='explanation collapse' id='explanation-{{id}}'>{{{description}}}</div>\
+        <div class='help' id='explanation-{{id}}'><h3>{{question}}</h3><p>{{{description}}}</p></div>\
         <fieldset aria-labelledby='question-{{id}}'>\
         {{#choices}}\
             <div class='checkbox' facetid='{{id}}'>\
@@ -277,7 +245,7 @@
         // alert(JSON.stringify(servicelist));
         //
         // render the services grid
-        $("#rdmsg-services").append($.Mustache.render('services-template', {services: servicelist} ));
+        $("#modularstorage-services").append($.Mustache.render('services-template', {services: servicelist} ));
         // render the comparison chart
 
 
@@ -461,7 +429,7 @@
       $(".jump-to-chart").hide();
     });
 
-    $( "#rdmsg-services" ).on('click', '.cardcheckbox', function() {
+    $( "#modularstorage-services" ).on('click', '.cardcheckbox', function() {
         $('.jump-to-chart').show();
         var service_count = $('.cardcheckbox:checked').length;
         if (service_count < 1) {
@@ -505,25 +473,25 @@
         $('.manualcheckbox:visible').prop('checked', false);
     });
 
-    var stickCompareBar = throttle(function(){
-        // this doesn't  need to happen if there are no services checked
-        var service_count = $('.cardcheckbox:checked').length;
-        if (service_count > 1 && (jump_delay == false)) {
-            // here, we choose the cards container since we know that'll be around when the JS runs
-            $el = $('#rdmsg-services');
+    // var stickCompareBar = throttle(function(){
+    //     // this doesn't  need to happen if there are no services checked
+    //     var service_count = $('.cardcheckbox:checked').length;
+    //     if (service_count > 1 && (jump_delay == false)) {
+    //         // here, we choose the cards container since we know that'll be around when the JS runs
+    //         $el = $('#modularstorage-services');
 
-            // find the bottom of that el
-            var bottom = $el.offset().top + $el.outerHeight(true);
+    //         // find the bottom of that el
+    //         var bottom = $el.offset().top + $el.outerHeight(true);
 
-            // add an offset so the compare bar will go away when the screen is scrolled to 200 pixels above the bottom of the comparison chart - this is just a rough approximation of when they might be able to see the table.
+    //         // add an offset so the compare bar will go away when the screen is scrolled to 200 pixels above the bottom of the comparison chart - this is just a rough approximation of when they might be able to see the table.
 
-            if ($(window).scrollTop() >= (bottom - 200)) {
-                $('.jump-to-chart').hide();
-            } else {
-                $('.jump-to-chart').show();
-            }
-        }
-    }, 200);
+    //         if ($(window).scrollTop() >= (bottom - 200)) {
+    //             $('.jump-to-chart').hide();
+    //         } else {
+    //             $('.jump-to-chart').show();
+    //         }
+    //     }
+    // }, 200);
 
 
     function listenForScrollEvent(el){
@@ -695,12 +663,12 @@ function validateEmail(Email) {
         });
         $(".chart-select-all").on("click", function(){
             show_STSM();
-        });     
-        //if NONE filter is selected hie stsm 
+        });
+        //if NONE filter is selected hie stsm
         $(".chart-select-none").on("click", function(){
             $('#scroll-to-see-more').removeClass('my-show');
             $('#scroll-to-see-more').addClass('my-hidden');
-        });  
+        });
 
         show_STSM();
         add_focus_events();
@@ -713,7 +681,7 @@ function validateEmail(Email) {
         }
     });
 
-    //test to see if scroll bar exists if it does show STSM 
+    //test to see if scroll bar exists if it does show STSM
     //for some reason scroll bar width is 6000+ when first rendered?
     function show_STSM(){
         var elementSO = $(".scrolling-outer").get(0);
@@ -724,10 +692,10 @@ function validateEmail(Email) {
                 //really big table just show
                 if (compChecked == selected){
                     $('#scroll-to-see-more').removeClass('my-hidden');
-                    $('#scroll-to-see-more').addClass('my-show');    
+                    $('#scroll-to-see-more').addClass('my-show');
                 }else if(elementSO.offsetWidth < elementSO.scrollWidth){
                     $('#scroll-to-see-more').removeClass('my-hidden');
-                    $('#scroll-to-see-more').addClass('my-show');   
+                    $('#scroll-to-see-more').addClass('my-show');
                 }else{
                     $('#scroll-to-see-more').removeClass('my-show');
                     $('#scroll-to-see-more').addClass('my-hidden');
@@ -735,18 +703,18 @@ function validateEmail(Email) {
             }else if ((elementSO.offsetWidth < elementSO.scrollWidth) && (elementSO.scrollWidth < 5000)) {
                 //console.log("has overflow "+elementSO.offsetWidth+" < "+elementSO.scrollWidth);
                 $('#scroll-to-see-more').removeClass('my-hidden');
-                $('#scroll-to-see-more').addClass('my-show');                  
+                $('#scroll-to-see-more').addClass('my-show');
 
             } else {
                 $('#scroll-to-see-more').removeClass('my-show');
                 $('#scroll-to-see-more').addClass('my-hidden');
             }
-            //add scrolling outer event to hide STSM on scroll this could be in 
+            //add scrolling outer event to hide STSM on scroll this could be in
             $(".scrolling-outer").scroll(function(){
                 $('#scroll-to-see-more').removeClass('my-show');
                 $('#scroll-to-see-more').addClass('my-hidden');
                 SCROLL_CONF = true;
-            });               
+            });
         }
     }
     /* end of scroll to see more */
@@ -759,7 +727,7 @@ function validateEmail(Email) {
 
     //WA fix for tabing to table header only used if user is tabing through table
     //shows or hides overlay
-    function add_focus_events(){ 
+    function add_focus_events(){
         var my_attr = $(".floating-row-header").find("a").attr('data-hidden');
         if( !my_attr){
             $("#comparisonchart th").find("a").on("focus", function(){
@@ -776,6 +744,6 @@ function validateEmail(Email) {
             });
 
         };
-    }    
-    
+    }
+
 })(jQuery, Drupal, drupalSettings);

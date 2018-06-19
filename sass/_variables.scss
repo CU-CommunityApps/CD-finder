@@ -1,0 +1,22 @@
+$modularstorage-color-a: #84653d;
+$modularstorage-color-b: #b24800;
+$modularstorage-color-c: #099fc9;
+$modularstorage-color-d: #5e6caa;
+$modularstorage-color-e: #78879d;
+$medium-gray: #757575;
+$focus-color: #9dccfd;
+
+
+
+$screen-xs-min: 480px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+$screen-xl-min: 1440px !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$alt-font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+
