@@ -1,0 +1,19 @@
+$rdmsg-teal: #207d93;
+$rdmsg-yellow: #f8bc5b;
+$rdmsg-ochre: darken($rdmsg-yellow, 36);
+$rdmsg-purple: #95789d;
+$rdmsg-green: #5A8128;
+$medium-gray: #757575;
+$focus-color: #9dccfd;
+
+$screen-xs-min: 480px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1200px !default;
+$screen-xl-min: 1440px !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$alt-font-sans: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$alt-font-sans-standard: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
