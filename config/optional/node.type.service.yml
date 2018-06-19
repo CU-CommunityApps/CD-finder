@@ -9,6 +9,8 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
+_core:
+  default_config_hash: EyvNo1oZazY9kHGtHDlaLCzDlkxzbRgc089SL00ylo8
 name: Service
 type: service
 description: 'Part of the Finder module'

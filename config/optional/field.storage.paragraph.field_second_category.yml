@@ -5,6 +5,8 @@ dependencies:
   module:
     - paragraphs
     - text
+_core:
+  default_config_hash: cxQVASWBnU8PuMnhsXXpUf_Ft5VFqjuWbmBPt_6-kRQ
 id: paragraph.field_second_category
 field_name: field_second_category
 entity_type: paragraph

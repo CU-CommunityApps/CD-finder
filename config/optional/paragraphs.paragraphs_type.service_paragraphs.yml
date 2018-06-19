@@ -2,6 +2,8 @@ uuid: 7d5f4dbb-ac5b-4676-b274-649cacc9a403
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: Bajtlfaz_uq_YzbwuZcexXBoqs2q3ByyiPC9ikHKZe0
 id: service_paragraphs
 label: 'Service Paragraphs'
 icon_uuid: null

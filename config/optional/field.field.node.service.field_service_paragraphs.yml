@@ -8,6 +8,8 @@ dependencies:
     - paragraphs.paragraphs_type.service_paragraphs
   module:
     - entity_reference_revisions
+_core:
+  default_config_hash: odxUnLo2A2qEn1o-vxZP1C_EimpW34IwmSS8cShH__Q
 id: node.service.field_service_paragraphs
 field_name: field_service_paragraphs
 entity_type: node
@@ -25,16 +27,7 @@ settings:
     target_bundles:
       service_paragraphs: service_paragraphs
     target_bundles_drag_drop:
-      insert_gallery:
-        weight: 4
-        enabled: false
-      insert_slideshow:
-        weight: 5
-        enabled: false
-      slideshow_slide:
-        weight: 6
-        enabled: false
       service_paragraphs:
         enabled: true
-        weight: 7
+        weight: -3
 field_type: entity_reference_revisions

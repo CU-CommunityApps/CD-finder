@@ -1,0 +1,32 @@
+uuid: 5e07006c-8898-4750-9e99-a366bad3fa9b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.facets.field_control_type
+    - taxonomy.vocabulary.facets
+id: taxonomy_term.facets.default
+targetEntityType: taxonomy_term
+bundle: facets
+mode: default
+content:
+  field_control_type:
+    type: entity_reference_autocomplete
+    weight: 1
+    region: content
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  description: true
+  path: true

@@ -6,6 +6,8 @@ dependencies:
     - field.storage.node.field_facet_matches
     - node.type.service
     - taxonomy.vocabulary.facets
+_core:
+  default_config_hash: BSsidwmarhlKx9yoWjSTwu7kJjRh5MHEUDh2mSopD_o
 id: node.service.field_facet_matches
 field_name: field_facet_matches
 entity_type: node

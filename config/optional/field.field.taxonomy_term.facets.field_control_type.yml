@@ -7,18 +7,20 @@ dependencies:
     - taxonomy.vocabulary.control_type
     - taxonomy.vocabulary.facets
   content:
-    - 'taxonomy_term:control_type:ee028a23-5cd5-45da-b449-0d1b8cc1aacc'
+    - 'taxonomy_term:control_type:e138e5a3-0eb3-4bd6-971c-094a2da11b51'
+_core:
+  default_config_hash: uLcoXrP7ENedZBxNtr-a-cZg7vg7PqbbOcmEyYN288Q
 id: taxonomy_term.facets.field_control_type
 field_name: field_control_type
 entity_type: taxonomy_term
 bundle: facets
 label: 'Control Type'
 description: ''
-required: false
+required: true
 translatable: false
 default_value:
   -
-    target_uuid: ee028a23-5cd5-45da-b449-0d1b8cc1aacc
+    target_uuid: e138e5a3-0eb3-4bd6-971c-094a2da11b51
 default_value_callback: ''
 settings:
   handler: 'default:taxonomy_term'

@@ -1,0 +1,30 @@
+uuid: 3943b8f0-732f-4f2b-a5c4-01f755e5a17a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.service_paragraphs.field_first_category
+    - field.field.paragraph.service_paragraphs.field_second_category
+    - paragraphs.paragraphs_type.service_paragraphs
+  module:
+    - text
+id: paragraph.service_paragraphs.default
+targetEntityType: paragraph
+bundle: service_paragraphs
+mode: default
+content:
+  field_first_category:
+    type: text_default
+    weight: 0
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_second_category:
+    type: text_default
+    weight: 1
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

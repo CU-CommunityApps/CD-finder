@@ -2,6 +2,8 @@ uuid: 31fcc9cf-f89a-49f2-bc31-df1d2cfd3bd0
 langcode: en
 status: true
 dependencies: {  }
+_core:
+  default_config_hash: 9b-z2mFeCRJzI2M_GxRjNTALdHZlIYg5ut5aUCmnACM
 name: 'Control Type'
 vid: control_type
 description: 'Part of the Finder module'
