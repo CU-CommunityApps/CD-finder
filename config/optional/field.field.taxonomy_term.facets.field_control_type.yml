@@ -16,7 +16,7 @@ entity_type: taxonomy_term
 bundle: facets
 label: 'Control Type'
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -
