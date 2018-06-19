@@ -502,7 +502,7 @@
         addEvents();
     }
 
-    $(document).scroll(stickCompareBar);
+    //$(document).scroll(stickCompareBar);
 
 
     // find the facet with the given id
