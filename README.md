@@ -60,6 +60,6 @@ Required:  Add an additional Service with the title “Help” and put text in e
 * You may wish to remove all sidebar blocks from this page, so that the Finder can use the full width of the page.
 * The Finder module is displayed at the URL path /finder.
 * There is a configuration page to edit titles and other data on the Finder page at /admin/config/content/finder
-* Check out our production implementation at http://finder.research.cornell.edu
+* Check out our production implementation at https://finder.research.cornell.edu
 * You will need to configure the SMTP module to allow the Finder module to send mail.
-
+* Installation works only at a root site, not if installed in a subdirectory.
