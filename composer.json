@@ -24,6 +24,11 @@
             "name": "Anthony Adinolfi",
             "email": "ama39@cornell.edu",
             "role": "Designer"
+        },
+        {
+            "name": "Taggart Jensen",
+            "email": "taggart.jensen@xvt.com.au",
+            "role": "Guy who forked this."
         }
     ],
     "support": {
