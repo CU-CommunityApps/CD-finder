@@ -5,6 +5,9 @@ finder.content:
     _title: 'Finder'
   requirements:
     _permission: 'access content'
+  options:
+    no_cache: 'TRUE'
+
 finder.facettree:
   path: '/rest/facettree'
   defaults:

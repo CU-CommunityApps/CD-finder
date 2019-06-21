@@ -15,19 +15,10 @@ class FinderController extends ControllerBase {
    * @return array
    */
   public function content() {
-/*
-    return array(
-      '#type' => 'markup',
-      '#markup' => $this->t('Hello, World!  From the Finder controller.'),
-    );
-*/
 
-// assure that a session has been started, and then set the csrf_token
-
-
-
-
-
+    /* Assure that a session has been started,
+     and then set the csrf_token.
+    */
     return [
       '#theme' => 'finder',
       '#attached' => [
@@ -43,7 +34,7 @@ class FinderController extends ControllerBase {
  */
 
   private function createfacettree() {
-   $terms=Drupal::entityTypeManager()
+   $terms= \Drupal::entityTypeManager()
         ->getStorage('taxonomy_term')
         ->loadTree("facets", 0, null, true);
         //  $vid, $parent, $max_depth, $load_entities);
@@ -68,7 +59,7 @@ class FinderController extends ControllerBase {
         ];
     }
 
-    // find the questions and add choices array
+    // find the questions and add choices array.
     $questions = [];
 
     foreach ($term_data as $td) {

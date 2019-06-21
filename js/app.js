@@ -247,7 +247,7 @@
         // render the services grid
         $("#modularstorage-services").append($.Mustache.render('services-template', {services: servicelist} ));
         // render the comparison chart
-
+        console.log(servicelist);
 
 // instead of labels, we have field_data[field]["label"]
 
@@ -271,11 +271,18 @@
         // every other row
         for (var i=0;i<sortedfields.length;i++) {
             field = sortedfields[i];
-            //alert(field);
+            //console.log(field);
+            //console.log(servicehelp.field_data);
+            //console.log(servicehelp);
+
             chart = chart + "<tr>";
             chart = chart + "<th scope='row'>"+servicelist[0].field_data[field].label;
             help_text_counter++;
-            help =  servicehelp.field_data[field].value ? "<a class='popup' aria-haspop='true' href='#help-"+help_text_counter+"'><span class='sr-only'>More information about "+servicelist[0].field_data[field].label+"</span><span class='fa fa-info-circle'></span></a><div class='help' id='help-"+help_text_counter+"'><h3>"+servicelist[0].field_data[field].label+"</h3>"+servicehelp.field_data[field].value+"</div>" : "";
+            help = '';
+            if (servicehelp && servicehelp.field_data ) {
+                help =  servicehelp.field_data[field].value ? "<a class='popup' aria-haspop='true' href='#help-"+help_text_counter+"'><span class='sr-only'>More information about "+servicelist[0].field_data[field].label+"</span><span class='fa fa-info-circle'></span></a><div class='help' id='help-"+help_text_counter+"'><h3>"+servicelist[0].field_data[field].label+"</h3>"+servicehelp.field_data[field].value+"</div>" : "";
+            }
+
             chart = chart + help;
             chart = chart +"</th>"; // row title
                 for (var j=0;j<servicelist.length;j++) {

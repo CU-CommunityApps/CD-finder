@@ -3,7 +3,6 @@
 
 
 function finder_theme($existing, $type, $theme, $path) {
-
   return [
     'finder' => [
       'variables' => [],
