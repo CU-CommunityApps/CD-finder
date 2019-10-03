@@ -100,7 +100,7 @@
 
     // read the data from JSON endpoints
 
-    $.getJSON( "/rest/finder_settings", function( response ) {
+    $.getJSON( drupalSettings.path.baseUrl + "/rest/finder_settings", function( response ) {
         //alert(JSON.stringify(response));
         $('#pagetitle').html(response.title.replace(/(?:\r\n|\r|\n)/g, '<br />'));
         $('#pagesubtitle').html(response.subtitle.replace(/(?:\r\n|\r|\n)/g, '<br />'));
@@ -117,7 +117,7 @@
     });
 
 
-    $.getJSON( "/rest/facettree", function( response ) {
+    $.getJSON( drupalSettings.path.baseUrl + "/rest/facettree", function( response ) {
 
         // JSON responses are automatically parsed.
 
@@ -208,7 +208,7 @@
 
 
     // load the services
-    $.getJSON( "/rest/servicelist", function( responseb ) {
+    $.getJSON( drupalSettings.path.baseUrl + "/rest/servicelist", function( responseb ) {
         services = responseb;
         //servicelist = responseb.data;
 
@@ -573,7 +573,7 @@ function validateEmail(Email) {
         }
         if (emailaddresses.length > 0) {
             var csrf_token;
-            $.getJSON( "/rest/session/token", function( response ) {
+            $.getJSON( drupalSettings.path.baseUrl + "/rest/session/token", function( response ) {
                 csrf_token = response.data;
             });
 
@@ -587,7 +587,7 @@ function validateEmail(Email) {
             //alert(JSON.stringify(emaildata));
 
             $.ajax({
-                url: '/rest/sendemail',
+                url: drupalSettings.path.baseUrl + '/rest/sendemail',
                 type: 'POST',
                 data: JSON.stringify(emaildata),
                 headers: {
