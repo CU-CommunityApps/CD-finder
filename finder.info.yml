@@ -3,7 +3,7 @@ description: Creates a page showing the Resource Finder.
 package: Custom
 
 type: module
-core: 8.x
+core_version_requirement: 9.x
 dependencies:
   - paragraphs:paragraphs
 libraries:
