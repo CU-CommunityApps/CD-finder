@@ -279,7 +279,7 @@ class FinderController extends ControllerBase {
                 "with your criteria already selected: " .
                 \Drupal::request()->getSchemeAndHttpHost() .
                 "/finder?facets=" .
-                implode($facets,",") .
+                implode(",",$facets) .
                 "\r\n\r\n" .
                 "If you have any further questions or need more information about " .
                 "Finder services, please contact the helpdesk to set up a consultation, ".
