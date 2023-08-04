@@ -86,6 +86,12 @@ Line 368: \Drupal::messenger()->addMessage($this->t('Your message has been sent.
 storage.info.yml: Add core_version_requirement: ^8 || ^9
 ``
 
+
 ```
 For PHP 8: same file, at/nearline 361: implode($facets,",") . becomes implode(",",$facets) .
+
 ```
+
+
+### Note about the info circle (facets/questions to filter results):
+- When editing a facet, if you cannot see a description box to insert the info you'd like to pop-up, go to Home >> Administration >> Structure >> Taxonomy >> Edit Facets >> Facets >> Manage form display, and then drag "Description" from "Disabled" to "Field". Click "Save" and you are now all set.
