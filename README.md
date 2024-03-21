@@ -63,29 +63,3 @@ Required:  Add an additional Service with the title “Help” and put text in e
 * Check out our production implementation at https://finder.research.cornell.edu
 * You will need to configure the SMTP module to allow the Finder module to send mail.
 * Installation works only at a root site, not if installed in a subdirectory.
-
-## Drupal 9 changes
-
-Here are some notes that may be useful if you wish to use this module with Drupal 9. 
-
-```
-src/Controller/StorageController.php line 231: Call to deprecated method entityManager() of class Drupal. Use Drupal::entityTypeManager() instead in most cases.If the needed method is not on \Drupal\Core\Entity\EntityTypeManagerInterface, see the deprecated \Drupal\Core\Entity\EntityManager to find the correct interface or service. 
-The corrected line 231 is:
-  $field_config = \Drupal::entityTypeManager()->getStorage('field_config')->load("paragraph" . '.' . "service_paragraphs" . '.' . $machine_name)->toArray();
-```
-
-```
-src/Controller/StorageController.php lines 364, 368:
-Call to deprecated function drupal_set_message().
-Use Drupal\Core\Messenger\MessengerInterface::addMessage() instead.
-Line 364: \Drupal::messenger()->addMessage($this->t('There was a problem sending your message and it was not sent.'), 'error');
-Line 368: \Drupal::messenger()->addMessage($this->t('Your message has been sent.')); 
-```
-
-``
-storage.info.yml: Add core_version_requirement: ^8 || ^9
-``
-
-```
-For PHP 8: same file, at/nearline 361: implode($facets,",") . becomes implode(",",$facets) .
-```

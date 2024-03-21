@@ -9,6 +9,7 @@ finder:
   js:
     js/mustache.js: {}
     js/jquery.mustache.js: {}
+    js/contrib/bootstrap.min.js: {}
     js/contrib/jquery.ba-throttle-debounce.min.js: {}
     js/contrib/jquery.detect_swipe.js: {}
     js/app.js: {}

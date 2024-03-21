@@ -177,7 +177,7 @@ class FinderController extends ControllerBase {
                     }
                     
 
-                    $field_config = \Drupal::entityManager()->getStorage('field_config')->load("paragraph" . '.' . "service_paragraphs" . '.' . $machine_name)->toArray();
+                    $field_config = \Drupal::entityTypeManager()->getStorage('field_config')->load("paragraph" . '.' . "service_paragraphs" . '.' . $machine_name)->toArray();
 
                     $field_data["label"] = $field_config["label"];
                     $field_data["weight"] = $pdcontent[$machine_name]["weight"];
@@ -279,7 +279,7 @@ class FinderController extends ControllerBase {
                 "with your criteria already selected: " .
                 \Drupal::request()->getSchemeAndHttpHost() .
                 "/finder?facets=" .
-                implode($facets,",") .
+                implode(",", $facets) .
                 "\r\n\r\n" .
                 "If you have any further questions or need more information about " .
                 "Finder services, please contact the helpdesk to set up a consultation, ".
@@ -306,11 +306,11 @@ class FinderController extends ControllerBase {
         $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
 
         if ($result['result'] !== true) {
-          drupal_set_message(t('There was a problem sending your message and it was not sent.'), 'error');
+          Drupal::messenger()->addMessage($this->t('There was a problem sending your message and it was not sent.'), 'error');
           return new JsonResponse("problem");
         }
         else {
-          drupal_set_message(t('Your message has been sent.'));
+          Drupal::messenger()->addMessage($this->t('Your message has been sent.'));
           return new JsonResponse("success");
         }
 
